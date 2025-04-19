@@ -69,6 +69,11 @@ const LoginButton: React.FC = () => {
               {user.email}
             </Text>
           )}
+          {user?.bio && (
+            <Text size={400} color="neutral" style={{ maxWidth: '400px', textAlign: 'center' }}>
+              {user.bio}
+            </Text>
+          )}
 
           {loading ? (
             <Spinner size="medium" />
@@ -89,12 +94,12 @@ const LoginButton: React.FC = () => {
                     }}
                   >
                     <Text size={400} weight="semibold">
-                      <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                      <a href={repo.html_url} target="_blank" rel="noopener noreferrer" style={{ marginRight: '10px' }}>
                         {repo.name}
                       </a>
                     </Text>
                     {repo.description && (
-                      <Text size={300} color="neutral">
+                      <Text size={300} color="neutral" style={{ marginTop: '10px' }}>
                         {repo.description}
                       </Text>
                     )}
